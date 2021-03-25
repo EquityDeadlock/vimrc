@@ -1,3 +1,7 @@
+call plug#begin('~/.vim/autoload/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
 "Main Settings ##########
 set tabstop=4
 set shiftwidth=4
@@ -45,5 +49,16 @@ function! CreateProgram()
 	call append("0","#include <stdio.h>")
 	:.+6
 endfun
+
+endif
+
+"Python Programming
+if extension == "py"
+
+set tabstop=2
+set shiftwidth=2
+
+map #4 :!python3 %
+map #9 :!time python3 %
 
 endif
